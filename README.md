@@ -1,2 +1,2 @@
-# RAIT-Facebiometry
+# Facebiometry
 RAIT Internship FaceBiometry Project
