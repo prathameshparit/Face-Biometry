@@ -1,285 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solid Template</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="./static/dist/css/style.css" type="text/css"/>
-	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Biometry</title>
+    <link rel="icon" href="static/dist/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/dist/css/style.css">
+    <script src="https://kit.fontawesome.com/67968b12b7.js" crossorigin="anonymous"></script>
 </head>
+<body>
+   <div class="menu-bar">
+    <nav class="navbar navbar-expand-lg  py-3">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="static/dist/images/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/form">Enroll</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/data_attendance">Attendance</a>
+              </li>
 
-<body onload="myFunction()" class="is-boxed has-animations">
-	<div id="loading"></div>
-    <div class="body-wrap">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-							<a href="#">
-								<img class="header-logo-image" src="./static/dist/images/logo.svg" alt="Logo">
-                            </a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
 
-        <main>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-inner">
-						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Hrushi 11</h1>
-	                        <p class="hero-paragraph">A face biometry website where it is checked whether the user is authorized or not.</p>
-<!--	                        <div class="hero-cta"><a class="button button-primary" href="#">Pre order now</a><a class="button" href="#">Get in touch</a></div>-->
-						</div>
-						<div class="hero-figure anime-element">
-							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
-								<rect width="528" height="396" style="fill:transparent;" />
-							</svg>
-							<div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
-							<div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
-							<div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
-							<div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
-							<div class="hero-figure-box hero-figure-box-05"></div>
-							<div class="hero-figure-box hero-figure-box-06"></div>
-							<div class="hero-figure-box hero-figure-box-07"></div>
-							<div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
-							<div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
-							<div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
-						</div>
-                    </div>
-                </div>
-            </section>
-
-<!--            <section class="features section">-->
-<!--                <div class="container">-->
-<!--					<div class="features-inner section-inner has-bottom-divider">-->
-<!--                        <div class="features-wrap">-->
-<!--                            <div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-01.svg" alt="Feature 01">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--							<div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-02.svg" alt="Feature 02">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-03.svg" alt="Feature 03">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-04.svg" alt="Feature 04">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--							<div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-05.svg" alt="Feature 05">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="feature text-center is-revealing">-->
-<!--                                <div class="feature-inner">-->
-<!--                                    <div class="feature-icon">-->
-<!--										<img src="./static/dist/images/feature-icon-06.svg" alt="Feature 06">-->
-<!--                                    </div>-->
-<!--                                    <h4 class="feature-title mt-24">Be Productive</h4>-->
-<!--                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </section>-->
-
-            <section class="pricing section">
-                <div class="container-sm">
-                    <div class="pricing-inner section-inner">
-                        <div class="pricing-header text-center">
-                            <h2 class="section-title mt-0">Face Biometry</h2>
-                            <p class="section-paragraph mb-0">Let's see what happens</p>
-                        </div>
-						<div class="pricing-tables-wrap">
-                            <div class="pricing-table">
-                                <div class="pricing-table-inner is-revealing">
-                                    <div class="pricing-table-main">
-										<div><h2>Face Recognition</h2></div>
-											<div id="cam">
-											  <img src="{{ url_for('video_feed') }}" width="900" height="500" />
-
-											</div>
-<!--                                        <div class="pricing-table-header pb-24">-->
-<!--                                            <div class="pricing-table-price"><span class="pricing-table-price-currency h2">$</span><span class="pricing-table-price-amount h1">49</span><span class="text-xs">/month</span></div>-->
-<!--                                        </div>-->
-<!--										<div class="pricing-table-features-title text-xs pt-24 pb-24">What you will get</div>-->
-<!--                                        <ul class="pricing-table-features list-reset text-xs">-->
-<!--                                            <li>-->
-<!--                                                <span>Lorem ipsum dolor sit nisi</span>-->
-<!--                                            </li>-->
-<!--                                            <li>-->
-<!--                                                <span>Lorem ipsum dolor sit nisi</span>-->
-<!--                                            </li>-->
-<!--                                            <li>-->
-<!--                                                <span>Lorem ipsum dolor sit nisi</span>-->
-<!--                                            </li>-->
-<!--											<li>-->
-<!--												<span>Lorem ipsum dolor sit nisi</span>-->
-<!--											</li>-->
-<!--                                        </ul>-->
-<!--                                    </div>-->
-
-                                    <div class="pricing-table-cta mb-8">
-                                        <a class="button button-primary button-shadow button-block" href="form">Enroll New</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-<!--			<section class="cta section">-->
-<!--				<div class="container">-->
-<!--					<div class="cta-inner section-inner">-->
-<!--						<h3 class="section-title mt-0">Still not convinced on buying?</h3>-->
-<!--						<div class="cta-cta">-->
-<!--							<a class="button button-primary button-wide-mobile" href="#">Get in touch</a>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</section>-->
-        </main>
-
-        <footer class="site-footer">
-            <div class="container">
-                <div class="site-footer-inner">
-                    <div class="brand footer-brand">
-						<a href="#">
-							<img class="header-logo-image" src="./static/dist/images/logo.svg" alt="Logo">
-						</a>
-                    </div>
-                    <ul class="footer-links list-reset">
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                        <li>
-                            <a href="#">About us</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ's</a>
-                        </li>
-                        <li>
-                            <a href="#">Support</a>
-                        </li>
-                    </ul>
-                    <ul class="footer-social-links list-reset">
-                        <li>
-                            <a href="#">
-                                <span class="screen-reader-text">Facebook</span>
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z" fill="#0270D7"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="screen-reader-text">Twitter</span>
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" fill="#0270D7"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="screen-reader-text">Google</span>
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" fill="#0270D7"/>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="footer-copyright">&copy; 2019 Solid, all rights reserved</div>
-                </div>
-            </div>
-        </footer>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-<style>
 
-html {
-  scrollbar-face-color: #646464;
-  scrollbar-base-color: #646464;
-  scrollbar-3dlight-color: #646464;
-  scrollbar-highlight-color: #646464;
-  scrollbar-track-color: #000;
-  scrollbar-arrow-color: #000;
-  scrollbar-shadow-color: #646464;
-  scrollbar-dark-shadow-color: #646464;
-}
+    <div class="home-page">
+    <div class="landing-page container">
+      <div class="information">
+        <h2>Face Biometry</h2>
+        <p>Facial recognition technology has been in use for decades, and remains one of the most widely used biometrics. Facial recognition technology uses the layout of facial features and their distance from one another for identification against a “gallery” of faces with similar characteristics.</p>
+      </div>
+      <div class="des-logo">
+         <img src="static/dist/images/ill.png" alt="">
+      </div>
+    </div>
+    </div>
 
-::-webkit-scrollbar { width: 8px; height: 3px;}
-::-webkit-scrollbar-button {  background-color: #666; }
-::-webkit-scrollbar-track {  background-color: #646464;}
-::-webkit-scrollbar-track-piece { background-color: #000;}
-::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-::-webkit-scrollbar-corner { background-color: #646464;}}
-::-webkit-resizer { background-color: #666;}
+    <section id="scrollspyfeature">
+        <h2 class="feature-title">Features</h2>
+      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="false">
 
+        <div class="carousel-inner">
 
-	#loading{
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	background: #000
-	url('https://c.tenor.com/Tmvg2fkeoeYAAAAC/loading-0000.gif')
-	 no-repeat center center;
-	z-index: 99999;
-}
+          <div class="carousel-item active container-fluid" >
+             <h2 class="price-text space"> 1. Recognises face on camera portal and tries to find and match patterns with the data it has been trained on.</h2>
+          </div>
+          <div class="carousel-item container-fluid" >
+            <h2 class=" price-text space"> 2. If recognized it authorises the face and name of person is appeared on the screen.</h2>
+          </div>
+          <div class="carousel-item  container-fluid" >
+            <h2 class="price-text space">3. If not it says unauthorized on the screen.</h2>
+          </div>
+          <div class="carousel-item  container-fluid" >
+            <h2 class="price-text">4. If recognized the report of the particular person is been maintained in csv format with the name, date and time. Also provides download option for downloading the data.</h2>
+          </div>
+          <div class="carousel-item  container-fluid" >
+            <h2 class="price-text">5. If unauthorized the image of unauthorized person is been saved at the database with it's date and time when the person has arrived.</h2>
+          </div>
+          <div class="carousel-item  container-fluid" >
+            <h2 class="price-text">6. The web application also provides a person to enroll itself with it's name and face and then the model is trained again with new data it has recieved.</h2>
+          </div>
 
-      </style>
+        </div>
 
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
 
-<script>
-		// $(document).ready(function(){
-			// 	$('div#loading').removeAttr('id');
-		// });
-		var preloader = document.getElementById("loading");
-		// window.addEventListener('load', function(){
-		// 	preloader.style.display = 'none';
-		// 	})
+      </div>
+    </section>
 
-		function myFunction(){
-			preloader.style.display = 'none';
-		};
-	</script>
+    <div class="face-biometry">
+          <h2>Face Biometry</h2>
+          <p>Make sure your face is fully visible in the camera.</p>
+          <div class="face-cam">
 
+<!--           <div id="cam">-->
+                <img src="{{ url_for('video_feed') }}" style="display: block; margin-left: auto;  margin-right: auto;width: 50%;" />
+<!--            </div>-->
+          </div>
+          <a class="btn" href="form">Enroll Now</a>
+          <a href=data_attendance><button type="button" id="btn1" class=" btn-primary btn-lg" onclick="location.href = 'csvrec.html';">View Attendance</button></a>
+    </div>
 
-    <script src="./static/dist/js/main.min.js"></script>
+    <div id="scrollspyfooter">
+      <h4>About Us</h4>
+      <p>We Group 6 consist of 4 members , and we have mada multi-application facial recognition project. </p> 
+      <div class="links">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <p class="ending">Made with <i class="fa-regular fa-heart"></i> by Group 6</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>

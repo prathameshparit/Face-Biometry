@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Biometry</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/dist/css/style.css">
+    <script src="https://kit.fontawesome.com/67968b12b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="menu-bar">
+        <nav class="navbar navbar-expand-lg  py-3">
+            <div class="container">
+              <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fa-solid fa-bars"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/form">Enroll</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/data_attendance">Attendance</a>
+                  </li>
+    
+                  <!-- <li class="nav-item">
+                    <a class="nav-link active" href="#scrollspyfeature">Features</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#scrollspyfooter">About Us</a>
+                  </li>-->
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+    <div class="records">
+        <h2>CSV Records</h2>
+    </div>
+
+    <div class="cvs-records">
+        <section class="AIVS">
+
+        {% block content1 %}
+
+
+<style>
+
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.mystyle {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 70px 0;
+  width: 80%
+}
+
+.mystyle thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mystyle tr:first-child td,
+
+tr td:first-child {
+    font-weight: bold;
+}
+
+
+.mystyle th,
+.mystyle td {
+  padding: 12px 15px;
+}
+
+.mystyle tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+<!--.mystyle tbody tr:nth-of-type(even) {-->
+<!--  background-color: #f3f3f3;-->
+<!--}-->
+
+.mystyle tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.mystyle tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+</style>
+
+
+<script>
+//user-defined function to download CSV file
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    //define the file type to text/csv
+    csvFile = new Blob([csv], {type: 'text/csv'});
+    downloadLink = document.createElement("a");
+    downloadLink.download = filename;
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = "none";
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+}
+
+//user-defined function to export the data to CSV file format
+function exportTableToCSV(filename) {
+   //declare a JavaScript variable of array type
+   var csv = [];
+   var rows = document.querySelectorAll("table tr");
+
+   //merge the whole data in tabular form
+   for(var i=0; i<rows.length; i++) {
+	var row = [], cols = rows[i].querySelectorAll("td, th");
+	for( var j=0; j<cols.length; j++)
+	   row.push(cols[j].innerText);
+	csv.push(row.join(","));
+   }
+   //call the function to download the CSV file
+   downloadCSV(csv.join("\n"), filename);
+}
+</script>
+
+
+<body>
+
+
+<table class="mystyle">
+{{ data | safe}}
+</table>
+</body>
+
+
+{% endblock content1 %}
+        <button type="button" id="btn1" class=" btn-primary btn-lg" onclick="exportTableToCSV('record.csv')">Download</button>
+    </div>
+
+   
+
+    <div id="scrollspyfooter">
+      <h4>About Us</h4>
+      <p>We Group 6 consist of 4 members , and we have mada multi-application facial recognition project. </p> 
+      <div class="links">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <p class="ending">Made with <i class="fa-regular fa-heart"></i> by Group 6</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
